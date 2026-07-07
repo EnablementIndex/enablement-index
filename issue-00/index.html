@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #EFF5EF; }
+  .seg-track { flex:1; height:30px; background:#DCE8DC; position:relative; }
+  .range-track { flex:1; height:30px; background:#DCE8DC; position:relative; }
+  .heat-cell { font-family:Inter,sans-serif; font-size:13px; font-weight:600; color:#0D1B2A; font-variant-numeric:tabular-nums; text-align:center; padding:14px 4px; border-right:1px solid #EFF5EF; border-bottom:1px solid #EFF5EF; }
+  .heat-row-label { font-family:Inter,sans-serif; font-size:12.5px; font-weight:500; color:#222; text-align:right; padding:14px 12px 14px 0; border-bottom:1px solid #EFF5EF; }
+  .heat-col-label { font-family:Inter,sans-serif; font-size:11.5px; font-weight:500; color:#7A8A7A; padding:10px 4px 0; text-align:center; line-height:1.25; }
+</style>
+</head>
+<body>
+<div style="max-width:780px; margin:0 auto; background:#EFF5EF; position:relative; overflow:hidden;">
+
+  <!-- Currency fiber texture -->
+  <div style="position:absolute; inset:0; pointer-events:none; z-index:0; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cline x1='47' y1='38' x2='49' y2='52' stroke='%23C0392B' stroke-width='0.7' opacity='0.7'/%3E%3Cline x1='312' y1='72' x2='314' y2='87' stroke='%232471A3' stroke-width='0.6' opacity='0.65'/%3E%3Cline x1='143' y1='155' x2='145' y2='169' stroke='%23C0392B' stroke-width='0.7' opacity='0.7'/%3E%3Cline x1='501' y1='201' x2='503' y2='215' stroke='%232471A3' stroke-width='0.6' opacity='0.65'/%3E%3Cline x1='78' y1='289' x2='80' y2='304' stroke='%23C0392B' stroke-width='0.7' opacity='0.7'/%3E%3Cline x1='389' y1='334' x2='391' y2='349' stroke='%232471A3' stroke-width='0.6' opacity='0.65'/%3E%3Cline x1='234' y1='418' x2='236' y2='432' stroke='%23C0392B' stroke-width='0.7' opacity='0.7'/%3E%3Cline x1='556' y1='467' x2='558' y2='481' stroke='%232471A3' stroke-width='0.6' opacity='0.65'/%3E%3Cline x1='112' y1='534' x2='114' y2='548' stroke='%23C0392B' stroke-width='0.6' opacity='0.65'/%3E%3Cline x1='445' y1='118' x2='447' y2='133' stroke='%232471A3' stroke-width='0.6' opacity='0.65'/%3E%3Cline x1='267' y1='245' x2='269' y2='259' stroke='%23C0392B' stroke-width='0.6' opacity='0.65'/%3E%3Cline x1='523' y1='378' x2='525' y2='393' stroke='%232471A3' stroke-width='0.6' opacity='0.65'/%3E%3Cline x1='178' y1='501' x2='180' y2='516' stroke='%23C0392B' stroke-width='0.6' opacity='0.65'/%3E%3Cline x1='356' y1='56' x2='358' y2='71' stroke='%232471A3' stroke-width='0.6' opacity='0.65'/%3E%3Cline x1='34' y1='445' x2='36' y2='460' stroke='%23C0392B' stroke-width='0.6' opacity='0.65'/%3E%3C/svg%3E&quot;); background-repeat:repeat;"></div>
+
+  <!-- Masthead -->
+  <div style="position:relative; z-index:1; background:#0D1B2A; padding:18px 56px; display:flex; align-items:center; justify-content:space-between;">
+    <div style="display:flex; align-items:center; gap:11px;">
+      <svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="12" width="4.5" height="9" fill="#5C6672"/><rect x="8.75" y="7" width="4.5" height="14" fill="#5C6672"/><rect x="16.5" y="2" width="4.5" height="19" fill="#2E9E5B"/></svg>
+      <span style="font-family:Inter,sans-serif; font-size:14px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#FFFFFF;">Enablement Index</span>
+    </div>
+    <span style="font-family:Inter,sans-serif; font-size:11.5px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#9AA3AD;">Issue 00 · 2024–25 Baseline</span>
+  </div>
+
+  <!-- Hero -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:56px 56px 24px;">
+    <div style="font-family:Inter,sans-serif; font-size:12.5px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#7A8A7A; margin-bottom:22px;">The Baseline</div>
+    <h1 style="font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:60px; line-height:1.03; letter-spacing:-0.01em; color:#0D1B2A; margin:0 0 24px; text-wrap:balance;">Same title. Different impact.</h1>
+    <p style="font-family:Inter,sans-serif; font-size:23px; font-weight:600; line-height:1.4; color:#222222; margin:0 0 18px; max-width:36ch;">Revenue attribution is the skill that pays. The same "Enablement Manager" can earn $100K or $200K — the difference is what the job description says they do.</p>
+    <p style="font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#7A8A7A; margin:0;">By Benjamin Bowles · Enablement Index</p>
+  </div>
+
+  <!-- KPI strip -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; margin:8px 56px 0; display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid #C8D5C8; border-bottom:1px solid #C8D5C8;">
+    <div style="padding:24px 20px 24px 0;">
+      <div style="font-family:Inter,sans-serif; font-size:34px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums; line-height:1;">$150K</div>
+      <div style="font-family:Inter,sans-serif; font-size:11px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#7A8A7A; margin-top:8px;">Revenue attribution avg</div>
+    </div>
+    <div style="padding:24px 20px; border-left:1px solid #C8D5C8;">
+      <div style="font-family:Inter,sans-serif; font-size:34px; font-weight:600; color:#222222; font-variant-numeric:tabular-nums; line-height:1;">$60K+</div>
+      <div style="font-family:Inter,sans-serif; font-size:11px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#7A8A7A; margin-top:8px;">Top-to-bottom cluster spread</div>
+    </div>
+    <div style="padding:24px 20px; border-left:1px solid #C8D5C8;">
+      <div style="font-family:Inter,sans-serif; font-size:34px; font-weight:600; color:#222222; font-variant-numeric:tabular-nums; line-height:1;">4</div>
+      <div style="font-family:Inter,sans-serif; font-size:11px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#7A8A7A; margin-top:8px;">Career clusters identified</div>
+    </div>
+    <div style="padding:24px 0 24px 20px; border-left:1px solid #C8D5C8;">
+      <div style="font-family:Inter,sans-serif; font-size:34px; font-weight:600; color:#222222; font-variant-numeric:tabular-nums; line-height:1;">&lt;100</div>
+      <div style="font-family:Inter,sans-serif; font-size:11px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#7A8A7A; margin-top:8px;">Roles with full JD &amp; salary</div>
+    </div>
+  </div>
+
+  <!-- The Take -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:44px 56px 8px; max-width:680px;">
+    <div style="font-family:Inter,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#1D6E3F; margin-bottom:16px;">The Take</div>
+    <p style="font-family:Inter,sans-serif; font-size:18px; font-weight:400; line-height:1.62; color:#222222; margin:0 0 18px;">In early 2025 we hand-collected revenue-enablement job postings off LinkedIn and company career pages. After cleaning, we had just under a hundred roles where both the salary and the full job description were captured. Not an optimal sample size, but big enough to see the shape.</p>
+    <p style="font-family:Inter,sans-serif; font-size:18px; font-weight:400; line-height:1.62; color:#222222; margin:0 0 18px;">What we saw: same title, different pay. An "Enablement Manager" could earn $100K or $200K. The variable wasn't seniority, industry, or reporting line. It was the language. Roles built around <em>revenue attribution</em> averaged $150K. Roles built around <em>tool ownership</em> averaged $112K. Same job function with different skills in the JD brought different numbers on the offer.</p>
+    <p style="font-family:Inter,sans-serif; font-size:18px; font-weight:400; line-height:1.62; color:#222222; margin:0;">That insight became the editorial spine of the Enablement Index: the market doesn't pay for activities, it pays for outcomes. Issue 00 publishes the original 2024–25 baseline in the new format. Issue 01 reads the year that followed.</p>
+  </div>
+
+  <!-- Chart 1: Career clusters -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:40px 56px 8px;">
+    <h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:32px; line-height:1.1; color:#0D1B2A; margin:0 0 6px;">Four clusters. Four pay bands.</h2>
+    <p style="font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#7A8A7A; margin:0 0 28px;">Compensation range by career cluster · 2024–25 · USD</p>
+    <div style="display:flex; flex-direction:column; gap:18px;">
+
+      <!-- Strategic GTM: $160K+ (shown as bar from 160 to 200) -->
+      <div>
+        <div style="display:flex; align-items:center; gap:16px;">
+          <span style="width:170px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#222;">Strategic GTM Enablement</span>
+          <div class="range-track"><div style="margin-left:70%; width:30%; height:100%; background:linear-gradient(90deg,#1D6E3F,#1D6E3F 70%,rgba(29,110,63,0.25));"></div></div>
+          <span style="width:96px; flex:none; font-family:Inter,sans-serif; font-size:14.5px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums; text-align:right;">$160K+ OTE</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:16px; margin-top:4px;">
+          <span style="width:170px; flex:none;"></span>
+          <span style="flex:1; font-family:Inter,sans-serif; font-size:12.5px; color:#7A8A7A;">Partner to Sales / RevOps · field execution · revenue impact reporting</span>
+          <span style="width:96px; flex:none;"></span>
+        </div>
+      </div>
+
+      <!-- Systems & Tooling: $120K-$150K -->
+      <div>
+        <div style="display:flex; align-items:center; gap:16px;">
+          <span style="width:170px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#222;">Systems &amp; Tooling</span>
+          <div class="range-track"><div style="margin-left:50%; width:25%; height:100%; background:#8A9A8A;"></div></div>
+          <span style="width:96px; flex:none; font-family:Inter,sans-serif; font-size:14.5px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; text-align:right;">$120–150K</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:16px; margin-top:4px;">
+          <span style="width:170px; flex:none;"></span>
+          <span style="flex:1; font-family:Inter,sans-serif; font-size:12.5px; color:#7A8A7A;">Sales tech stack &amp; workflow automation · admin · process optimization</span>
+          <span style="width:96px; flex:none;"></span>
+        </div>
+      </div>
+
+      <!-- Training & Onboarding: $110K-$140K -->
+      <div>
+        <div style="display:flex; align-items:center; gap:16px;">
+          <span style="width:170px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#222;">Training &amp; Onboarding</span>
+          <div class="range-track"><div style="margin-left:45%; width:25%; height:100%; background:#8A9A8A;"></div></div>
+          <span style="width:96px; flex:none; font-family:Inter,sans-serif; font-size:14.5px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; text-align:right;">$110–140K</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:16px; margin-top:4px;">
+          <span style="width:170px; flex:none;"></span>
+          <span style="flex:1; font-family:Inter,sans-serif; font-size:12.5px; color:#7A8A7A;">Role-based skill development · program design · LMS · onboarding facilitation</span>
+          <span style="width:96px; flex:none;"></span>
+        </div>
+      </div>
+
+      <!-- Core Enablement Generalist: $90K-$120K -->
+      <div>
+        <div style="display:flex; align-items:center; gap:16px;">
+          <span style="width:170px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#222;">Core Enablement Generalist</span>
+          <div class="range-track"><div style="margin-left:35%; width:25%; height:100%; background:#B5A88C;"></div></div>
+          <span style="width:96px; flex:none; font-family:Inter,sans-serif; font-size:14.5px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; text-align:right;">$90–120K</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:16px; margin-top:4px;">
+          <span style="width:170px; flex:none;"></span>
+          <span style="flex:1; font-family:Inter,sans-serif; font-size:12.5px; color:#7A8A7A;">Hybrid responsibilities · content updates · enablement calendar · ad-hoc support</span>
+          <span style="width:96px; flex:none;"></span>
+        </div>
+      </div>
+
+    </div>
+    <p style="font-family:Inter,sans-serif; font-size:13px; font-weight:400; line-height:1.5; color:#7A8A7A; margin:24px 0 0; border-top:1px solid #C8D5C8; padding-top:14px;">Clusters surfaced through KMeans on TF-IDF features of the job descriptions, then named by the dominant work. The $60K+ band from top to bottom is on roughly the same set of titles — the work itself is what's different. Bars show the typical compensation range, not a confidence interval.</p>
+  </div>
+
+  <!-- Chart 2: Skill comp bars -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:40px 56px 8px;">
+    <h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:32px; line-height:1.1; color:#0D1B2A; margin:0 0 6px;">What the market pays for</h2>
+    <p style="font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#7A8A7A; margin:0 0 28px;">Average compensation for roles naming each capability · USD</p>
+    <div style="display:flex; flex-direction:column; gap:14px;">
+
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:170px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Revenue Attribution</span>
+        <div class="seg-track"><div style="width:94%; height:100%; background:#1D6E3F;"></div></div>
+        <span style="width:72px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums; text-align:right;">$150,000</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:170px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Admin Enablement</span>
+        <div class="seg-track"><div style="width:74%; height:100%; background:#8A9A8A;"></div></div>
+        <span style="width:72px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; text-align:right;">$117,717</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:170px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Tool Ownership</span>
+        <div class="seg-track"><div style="width:70%; height:100%; background:#8A9A8A;"></div></div>
+        <span style="width:72px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; text-align:right;">$112,120</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:170px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Cross-Functional Collab</span>
+        <div class="seg-track"><div style="width:69%; height:100%; background:#8A9A8A;"></div></div>
+        <span style="width:72px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; text-align:right;">$110,558</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:170px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Data Literacy</span>
+        <div class="seg-track"><div style="width:69%; height:100%; background:#8A9A8A;"></div></div>
+        <span style="width:72px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; text-align:right;">$110,372</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:170px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Proof of Value</span>
+        <div class="seg-track"><div style="width:69%; height:100%; background:#8A9A8A;"></div></div>
+        <span style="width:72px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; text-align:right;">$109,849</span>
+      </div>
+
+    </div>
+    <p style="font-family:Inter,sans-serif; font-size:13px; font-weight:400; line-height:1.5; color:#7A8A7A; margin:20px 0 0; border-top:1px solid #C8D5C8; padding-top:14px;">Revenue attribution stands alone — $30K+ above every other capability, while five of the six skills cluster within $8K of each other. This is a huge differentiator in the market and it's one question - do you tie your work to revenue, or don't you.</p>
+  </div>
+
+  <!-- Chart 3: Heat map of pairings -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:40px 56px 8px;">
+    <h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:32px; line-height:1.1; color:#0D1B2A; margin:0 0 6px;">Skills that compound</h2>
+    <p style="font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#7A8A7A; margin:0 0 28px;">Average compensation when roles name both skills · USD thousands</p>
+
+    <div style="overflow-x:auto;">
+    <table style="border-collapse:collapse; margin:0 auto; font-family:Inter,sans-serif;">
+      <tr>
+        <td></td>
+        <td class="heat-col-label" style="width:88px;">Revenue<br>Attribution</td>
+        <td class="heat-col-label" style="width:88px;">Proof of<br>Value</td>
+        <td class="heat-col-label" style="width:88px;">Cross-<br>Functional</td>
+        <td class="heat-col-label" style="width:88px;">Data<br>Literacy</td>
+        <td class="heat-col-label" style="width:88px;">LMS / Admin<br>Enablement</td>
+        <td class="heat-col-label" style="width:88px;">Tool<br>Ownership</td>
+      </tr>
+
+      <tr>
+        <td class="heat-row-label">Revenue Attribution</td>
+        <td class="heat-cell" style="background:#1D6E3F; color:#FFFFFF;">$150K</td>
+        <td class="heat-cell" style="background:#EFF5EF; color:#C8D5C8;">—</td>
+        <td class="heat-cell" style="background:#0F5A2F; color:#FFFFFF;">$154K</td>
+        <td class="heat-cell" style="background:#1D6E3F; color:#FFFFFF;">$149K</td>
+        <td class="heat-cell" style="background:#1D6E3F; color:#FFFFFF;">$150K</td>
+        <td class="heat-cell" style="background:#0A4623; color:#FFFFFF;">$161K</td>
+      </tr>
+
+      <tr>
+        <td class="heat-row-label">Proof of Value</td>
+        <td class="heat-cell" style="background:#EFF5EF; color:#C8D5C8;">—</td>
+        <td class="heat-cell" style="background:#C8D9C8;">$110K</td>
+        <td class="heat-cell" style="background:#DCE8DC;">$106K</td>
+        <td class="heat-cell" style="background:#C8D9C8;">$110K</td>
+        <td class="heat-cell" style="background:#A8C5B2;">$121K</td>
+        <td class="heat-cell" style="background:#B8CFBC;">$114K</td>
+      </tr>
+
+      <tr>
+        <td class="heat-row-label">Cross-Functional</td>
+        <td class="heat-cell" style="background:#0F5A2F; color:#FFFFFF;">$154K</td>
+        <td class="heat-cell" style="background:#DCE8DC;">$106K</td>
+        <td class="heat-cell" style="background:#C8D9C8;">$111K</td>
+        <td class="heat-cell" style="background:#C8D9C8;">$113K</td>
+        <td class="heat-cell" style="background:#B8CFBC;">$117K</td>
+        <td class="heat-cell" style="background:#A8C5B2;">$119K</td>
+      </tr>
+
+      <tr>
+        <td class="heat-row-label">Data Literacy</td>
+        <td class="heat-cell" style="background:#1D6E3F; color:#FFFFFF;">$149K</td>
+        <td class="heat-cell" style="background:#C8D9C8;">$110K</td>
+        <td class="heat-cell" style="background:#C8D9C8;">$113K</td>
+        <td class="heat-cell" style="background:#C8D9C8;">$110K</td>
+        <td class="heat-cell" style="background:#B8CFBC;">$116K</td>
+        <td class="heat-cell" style="background:#B8CFBC;">$114K</td>
+      </tr>
+
+      <tr>
+        <td class="heat-row-label">LMS / Admin Enablement</td>
+        <td class="heat-cell" style="background:#1D6E3F; color:#FFFFFF;">$150K</td>
+        <td class="heat-cell" style="background:#A8C5B2;">$121K</td>
+        <td class="heat-cell" style="background:#B8CFBC;">$117K</td>
+        <td class="heat-cell" style="background:#B8CFBC;">$116K</td>
+        <td class="heat-cell" style="background:#B8CFBC;">$115K</td>
+        <td class="heat-cell" style="background:#A8C5B2;">$120K</td>
+      </tr>
+
+      <tr>
+        <td class="heat-row-label">Tool Ownership</td>
+        <td class="heat-cell" style="background:#0A4623; color:#FFFFFF;">$161K</td>
+        <td class="heat-cell" style="background:#B8CFBC;">$114K</td>
+        <td class="heat-cell" style="background:#A8C5B2;">$119K</td>
+        <td class="heat-cell" style="background:#B8CFBC;">$114K</td>
+        <td class="heat-cell" style="background:#A8C5B2;">$120K</td>
+        <td class="heat-cell" style="background:#C8D9C8;">$112K</td>
+      </tr>
+    </table>
+    </div>
+
+    <!-- Legend -->
+    <div style="display:flex; align-items:center; justify-content:center; gap:14px; margin-top:20px; font-family:Inter,sans-serif; font-size:11px; color:#7A8A7A;">
+      <span>Lower</span>
+      <span style="display:inline-block; width:24px; height:12px; background:#DCE8DC;"></span>
+      <span style="display:inline-block; width:24px; height:12px; background:#B8CFBC;"></span>
+      <span style="display:inline-block; width:24px; height:12px; background:#A8C5B2;"></span>
+      <span style="display:inline-block; width:24px; height:12px; background:#1D6E3F;"></span>
+      <span style="display:inline-block; width:24px; height:12px; background:#0A4623;"></span>
+      <span>Higher</span>
+    </div>
+
+    <p style="font-family:Inter,sans-serif; font-size:13px; font-weight:400; line-height:1.5; color:#7A8A7A; margin:20px 0 0; border-top:1px solid #C8D5C8; padding-top:14px;">Revenue Attribution lifts every skill it touches. Tool Ownership alone is a $112K job; Tool Ownership + Revenue Attribution is a $161K job — the highest cell in the matrix. LMS, Data Literacy, Cross-Functional Collaboration all jump $30–50K when paired with revenue language. The one pairing that doesn't appear at all is Revenue Attribution × Proof of Value — those two terms never showed up in the same JD. The hiring managers who write for revenue attribution don't write for proof of value like ROI. Lower-frequency pairings carry small samples, read directionally not exactly.</p>
+  </div>
+
+  <!-- The Signal -->
+  <div style="position:relative; z-index:1; margin:40px 56px 8px; background:#FDF3E1; border-left:3px solid #D4890A; padding:30px 32px 28px;">
+    <div style="font-family:Inter,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#D4890A; margin-bottom:14px;">The Signal</div>
+    <h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:30px; line-height:1.12; color:#0D1B2A; margin:0 0 18px;">There are more open CRO positions than VPs of Enablement.</h2>
+    <p style="font-family:Inter,sans-serif; font-size:16px; font-weight:400; line-height:1.55; color:#444; margin:0 0 14px;">That was Kunal Pandya's line when we first presented this data in 2025 on Sales Velocity Labs and the SEC Summit, and the data agreed with him. Enablement reads to most leadership teams as <strong>important but not essential.</strong></p>
+    <p style="font-family:Inter,sans-serif; font-size:16px; font-weight:400; line-height:1.55; color:#444; margin:0;">It's why the pay ladder tops out where it does, why VP titles are rare on public boards, and why "revenue attribution" earns a premium. It's this language that breaks the cost-center framing enablement gets trapped in. Issue 01 will look at this data in 2026.</p>
+  </div>
+
+  <!-- Methodology -->
+  <div style="position:relative; z-index:1; background:#EDEDFA; margin:40px 56px 8px; border:1px solid #C8C8E8; padding:26px 28px;">
+    <div style="font-family:Inter,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#6B54C8; margin-bottom:14px;">How we counted</div>
+    <p style="font-family:Inter,sans-serif; font-size:15px; font-weight:400; line-height:1.6; color:#444; margin:0 0 12px;">Issue 00 reads the original 2024–25 dataset as it was. Hundreds of revenue-enablement postings were tracked off LinkedIn and company career pages through early 2025; fewer than a hundred had both salary data and full job descriptions captured. That data set is the analytical core for every chart in this issue. Clusters were assigned via KMeans on TF-IDF features of the JD text; skill tags were extracted from JD language and joined to posted compensation (base or midpoint of disclosed range; OTE where listed). Comp values are <em>averages</em>, not median. This is a deliberate choice to stay consistent with how this data was originally reported; future issues of the Enablement Index will standardize on medians.</p>
+    <p style="font-family:Inter,sans-serif; font-size:15px; font-weight:400; line-height:1.6; color:#444; margin:0;">The sample is small. It is also the reason the Enablement Index exists. A hand-built dataset can't scale to monthly tracking, and the gaps in this baseline — manager-heavy tagging, limited VP coverage, no macro context — are exactly what the Index was built to fix. Future issues will bring in data closer to real time on a much larger and more robust dataset.</p>
+  </div>
+
+  <!-- Footnotes -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:32px 56px 8px;">
+    <p style="font-family:Inter,sans-serif; font-size:12.5px; font-weight:400; line-height:1.55; color:#7A8A7A; margin:0; border-top:1px solid #C8D5C8; padding-top:16px;">This data was originally analyzed in Q1 2025 and co-presented with Kunal Pandya (Sales Velocity Labs). Compensation figures reflect posted base or midpoint of disclosed range; OTE noted where applicable. Skill tags extracted from job description text. n &lt; 100 with full JD &amp; salary.</p>
+  </div>
+
+  <!-- Subscribe -->
+  <div style="position:relative; z-index:1; margin-top:24px; background:#0D1B2A; padding:44px 56px;">
+    <div style="font-family:Inter,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#2E9E5B; margin-bottom:16px;">Next · Issue 01 — June 2026</div>
+    <p style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:26px; line-height:1.25; color:#FFFFFF; margin:0 0 28px; max-width:32ch;">A year later, on over 400 roles. Did revenue language still pay? And how much did the floor move?</p>
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; border-top:1px solid rgba(255,255,255,0.16); padding-top:24px;">
+      <span style="font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#9AA3AD;">The Enablement Index publishes monthly, after the BLS jobs report.</span>
+      <a href="https://enablementindex.substack.com" style="font-family:Inter,sans-serif; font-size:13px; font-weight:600; letter-spacing:0.04em; color:#0D1B2A; background:#2E9E5B; padding:11px 22px; border-radius:2px; text-decoration:none; display:inline-block;">Subscribe →</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

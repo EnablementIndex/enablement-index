@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #EFF5EF; }
+  .seg-track { flex:1; height:30px; background:#DCE8DC; position:relative; }
+  .div-track { flex:1; height:26px; position:relative; }
+  .div-center { position:absolute; left:50%; top:-3px; bottom:-3px; width:1px; background:#B5C6B5; }
+</style>
+</head>
+<body>
+<div style="max-width:780px; margin:0 auto; background:#EFF5EF; position:relative; overflow:hidden;">
+
+  <!-- Currency fiber texture -->
+  <div style="position:absolute; inset:0; pointer-events:none; z-index:0; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cline x1='47' y1='38' x2='49' y2='52' stroke='%23C0392B' stroke-width='0.7' opacity='0.7'/%3E%3Cline x1='312' y1='72' x2='314' y2='87' stroke='%232471A3' stroke-width='0.7' opacity='0.75'/%3E%3Cline x1='143' y1='155' x2='145' y2='169' stroke='%23C0392B' stroke-width='0.7' opacity='0.7'/%3E%3Cline x1='501' y1='201' x2='503' y2='215' stroke='%232471A3' stroke-width='0.7' opacity='0.75'/%3E%3Cline x1='78' y1='289' x2='80' y2='304' stroke='%23C0392B' stroke-width='0.7' opacity='0.7'/%3E%3Cline x1='389' y1='334' x2='391' y2='349' stroke='%232471A3' stroke-width='0.7' opacity='0.75'/%3E%3Cline x1='234' y1='418' x2='236' y2='432' stroke='%23C0392B' stroke-width='0.7' opacity='0.7'/%3E%3Cline x1='556' y1='467' x2='558' y2='481' stroke='%232471A3' stroke-width='0.7' opacity='0.75'/%3E%3Cline x1='112' y1='534' x2='114' y2='548' stroke='%23C0392B' stroke-width='0.6' opacity='0.65'/%3E%3Cline x1='445' y1='118' x2='447' y2='133' stroke='%232471A3' stroke-width='0.7' opacity='0.75'/%3E%3Cline x1='267' y1='245' x2='269' y2='259' stroke='%23C0392B' stroke-width='0.6' opacity='0.65'/%3E%3Cline x1='523' y1='378' x2='525' y2='393' stroke='%232471A3' stroke-width='0.7' opacity='0.75'/%3E%3Cline x1='178' y1='501' x2='180' y2='516' stroke='%23C0392B' stroke-width='0.6' opacity='0.65'/%3E%3Cline x1='356' y1='56' x2='358' y2='71' stroke='%232471A3' stroke-width='0.7' opacity='0.75'/%3E%3Cline x1='34' y1='445' x2='36' y2='460' stroke='%23C0392B' stroke-width='0.6' opacity='0.65'/%3E%3Cline x1='418' y1='188' x2='420' y2='202' stroke='%232471A3' stroke-width='0.7' opacity='0.7'/%3E%3Cline x1='196' y1='268' x2='198' y2='283' stroke='%232471A3' stroke-width='0.7' opacity='0.7'/%3E%3Cline x1='60' y1='372' x2='62' y2='386' stroke='%232471A3' stroke-width='0.7' opacity='0.7'/%3E%3Cline x1='334' y1='420' x2='336' y2='434' stroke='%232471A3' stroke-width='0.7' opacity='0.7'/%3E%3Cline x1='412' y1='548' x2='414' y2='562' stroke='%232471A3' stroke-width='0.7' opacity='0.7'/%3E%3C/svg%3E&quot;); background-repeat:repeat;"></div>
+
+  <!-- Masthead -->
+  <div style="position:relative; z-index:1; background:#0D1B2A; padding:18px 56px; display:flex; align-items:center; justify-content:space-between;">
+    <div style="display:flex; align-items:center; gap:11px;">
+      <svg width="20" height="20" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="12" width="4.5" height="9" fill="#5C6672"/><rect x="8.75" y="7" width="4.5" height="14" fill="#5C6672"/><rect x="16.5" y="2" width="4.5" height="19" fill="#2E9E5B"/></svg>
+      <span style="font-family:Inter,sans-serif; font-size:14px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#FFFFFF;">Enablement Index</span>
+    </div>
+    <span style="font-family:Inter,sans-serif; font-size:11.5px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#9AA3AD;">Issue 01 · June 2026</span>
+  </div>
+
+  <!-- Hero -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:56px 56px 24px;">
+    <div style="font-family:Inter,sans-serif; font-size:12.5px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#7A8A7A; margin-bottom:22px;">Monthly Market Intelligence</div>
+    <h1 style="font-family:'Playfair Display',Georgia,serif; font-weight:800; font-size:60px; line-height:1.03; letter-spacing:-0.01em; color:#0D1B2A; margin:0 0 24px; text-wrap:balance;">The market pays for outcomes, not activities.</h1>
+    <p style="font-family:Inter,sans-serif; font-size:23px; font-weight:600; line-height:1.4; color:#222222; margin:0 0 18px; max-width:36ch;">The broad labor market is frozen. Sales reps have been missing quota for nine straight quarters. Enablement pay is up 14%, because someone has to fix it.</p>
+    <p style="font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#7A8A7A; margin:0;">By Benjamin Bowles · Enablement Index</p>
+  </div>
+
+  <!-- KPI strip -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; margin:8px 56px 0; display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid #C8D5C8; border-bottom:1px solid #C8D5C8;">
+    <div style="padding:24px 20px 24px 0;">
+      <div style="font-family:Inter,sans-serif; font-size:34px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums; line-height:1;">$60K</div>
+      <div style="font-family:Inter,sans-serif; font-size:11px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#7A8A7A; margin-top:8px;">Outcome-vs-activity gap</div>
+    </div>
+    <div style="padding:24px 20px; border-left:1px solid #C8D5C8;">
+      <div style="font-family:Inter,sans-serif; font-size:34px; font-weight:600; color:#222222; font-variant-numeric:tabular-nums; line-height:1;">$157K</div>
+      <div style="font-family:Inter,sans-serif; font-size:11px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#7A8A7A; margin-top:8px;">Median listed comp</div>
+    </div>
+    <div style="padding:24px 20px; border-left:1px solid #C8D5C8;">
+      <div style="font-family:Inter,sans-serif; font-size:34px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums; line-height:1;">+14%</div>
+      <div style="font-family:Inter,sans-serif; font-size:11px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#7A8A7A; margin-top:8px;">Median base, YoY</div>
+    </div>
+    <div style="padding:24px 0 24px 20px; border-left:1px solid #C8D5C8;">
+      <div style="font-family:Inter,sans-serif; font-size:34px; font-weight:600; color:#222222; font-variant-numeric:tabular-nums; line-height:1;">400+</div>
+      <div style="font-family:Inter,sans-serif; font-size:11px; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; color:#7A8A7A; margin-top:8px;">Roles tracked</div>
+    </div>
+  </div>
+
+  <!-- The Take -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:44px 56px 8px; max-width:680px;">
+    <div style="font-family:Inter,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#1D6E3F; margin-bottom:16px;">The Take</div>
+    <p style="font-family:Inter,sans-serif; font-size:18px; font-weight:400; line-height:1.62; color:#222222; margin:0 0 18px;">The broad U.S. labor market is frozen. June payrolls came in at +57K, the weakest growth of 2026, with the two prior months revised down a combined 74K. Indeed's job posting index is pinned at 101, essentially where it sat before the pandemic. Real wages are losing to inflation — average hourly earnings up 3.5% against CPI at 4.2%, a −0.7% real loss.</p>
+    <p style="font-family:Inter,sans-serif; font-size:18px; font-weight:400; line-height:1.62; color:#222222; margin:0 0 18px;">The sales floor has it worse. RepVue's Q1 2026 index shows only 44% of SaaS reps hitting quota. Inbound lead flow sentiment sits at 2.70 out of 5, the lowest read since mid-2025. Quota attainment has been stuck in the 40s for nine consecutive quarters — mostly flat, only recently trending up. The majority of sales reps are underperforming, and have been for over two years.</p>
+    <p style="font-family:Inter,sans-serif; font-size:18px; font-weight:400; line-height:1.62; color:#222222; margin:0;">Enablement is running the other way. Median listed comp is up 14% YoY. Manager pay is up 17%. Enablement job volume is growing while quota attainment keeps dropping. Most of what happens in enablement — content libraries, learning paths, tool rollouts, methodology certifications — isn't what the market is paying for. The pay premium sits on roles that name revenue impact: win rate, ramp, pipeline. Most enablement teams are still built around the wrong outputs.</p>
+  </div>
+
+  <!-- Three reads on the market -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:40px 56px 8px;">
+    <h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:32px; line-height:1.1; color:#0D1B2A; margin:0 0 6px;">Three reads on the market</h2>
+    <p style="font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#7A8A7A; margin:0 0 28px;">The broad economy, the sales floor, and the enablement layer above it · June 2026</p>
+
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:14px;">
+
+      <!-- Panel 1: U.S. Labor Market -->
+      <div style="background:#F3F5F3; border:1px solid #DDE3DD; padding:22px 20px;">
+        <div style="font-family:Inter,sans-serif; font-size:10px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#7A8A7A; margin-bottom:12px;">U.S. Labor Market</div>
+        <div style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:22px; line-height:1.15; color:#0D1B2A; margin-bottom:20px;">Frozen at baseline.</div>
+        <div style="margin-bottom:14px;">
+          <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; line-height:1;">+57K</div>
+          <div style="font-family:Inter,sans-serif; font-size:11px; color:#7A8A7A; margin-top:4px;">June payrolls, weakest growth of 2026</div>
+        </div>
+        <div style="margin-bottom:14px;">
+          <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; line-height:1;">101</div>
+          <div style="font-family:Inter,sans-serif; font-size:11px; color:#7A8A7A; margin-top:4px;">Indeed JPI (Feb 2020 = 100)</div>
+        </div>
+        <div>
+          <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; line-height:1;">−0.7%</div>
+          <div style="font-family:Inter,sans-serif; font-size:11px; color:#7A8A7A; margin-top:4px;">Real wages YoY (AHE 3.5% vs CPI 4.2%)</div>
+        </div>
+      </div>
+
+      <!-- Panel 2: SaaS Sales Roles -->
+      <div style="background:#FBEEEE; border:1px solid #EAD3D2; padding:22px 20px;">
+        <div style="font-family:Inter,sans-serif; font-size:10px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#B85450; margin-bottom:12px;">SaaS Sales Roles</div>
+        <div style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:22px; line-height:1.15; color:#0D1B2A; margin-bottom:20px;">Structural miss.</div>
+        <div style="margin-bottom:14px;">
+          <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; line-height:1;">44%</div>
+          <div style="font-family:Inter,sans-serif; font-size:11px; color:#7A8A7A; margin-top:4px;">Quota attainment, Q1 2026 (RepVue)</div>
+        </div>
+        <div style="margin-bottom:14px;">
+          <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; line-height:1;">~56%</div>
+          <div style="font-family:Inter,sans-serif; font-size:11px; color:#7A8A7A; margin-top:4px;">Reps missing quota, 9 straight quarters</div>
+        </div>
+        <div>
+          <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; line-height:1;">2.7<span style="font-size:14px; color:#7A8A7A;">/5</span></div>
+          <div style="font-family:Inter,sans-serif; font-size:11px; color:#7A8A7A; margin-top:4px;">Lead flow sentiment, lowest since mid-2025</div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Enablement Index -->
+      <div style="background:#E9F0E9; border:1px solid #C8D9C8; padding:22px 20px;">
+        <div style="font-family:Inter,sans-serif; font-size:10px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#1D6E3F; margin-bottom:12px;">Enablement Index</div>
+        <div style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:22px; line-height:1.15; color:#0D1B2A; margin-bottom:20px;">Running against the grain.</div>
+        <div style="margin-bottom:14px;">
+          <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums; line-height:1;">+14%</div>
+          <div style="font-family:Inter,sans-serif; font-size:11px; color:#7A8A7A; margin-top:4px;">Median listed comp YoY</div>
+        </div>
+        <div style="margin-bottom:14px;">
+          <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums; line-height:1;">+17.0%</div>
+          <div style="font-family:Inter,sans-serif; font-size:11px; color:#7A8A7A; margin-top:4px;">Manager tier, biggest mover</div>
+        </div>
+        <div>
+          <div style="font-family:Inter,sans-serif; font-size:20px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums; line-height:1;">11×</div>
+          <div style="font-family:Inter,sans-serif; font-size:11px; color:#7A8A7A; margin-top:4px;">AI in JDs (63.6% vs 5.7% market)</div>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="font-family:Inter,sans-serif; font-size:13px; font-weight:400; line-height:1.55; color:#7A8A7A; margin:22px 0 0;">The broad economy is at "low-hire, low-fire." The sales floor is chronically missing. Enablement pay is up double digits and hiring volume is growing. Read together, the pattern suggests demand: sales orgs can't hit numbers, and the people who help them close are the ones the market still wants to pay for.</p>
+  </div>
+
+  <!-- Chart 1: Compensation by segment -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:40px 56px 8px;">
+    <h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:32px; line-height:1.1; color:#0D1B2A; margin:0 0 6px;">Pay is up at every tier</h2>
+    <p style="font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#7A8A7A; margin:0 0 28px;">Median listed comp by segment · 2026 vs 2024–25 baseline · USD</p>
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:104px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Specialist</span>
+        <div class="seg-track"><div style="width:59%; height:100%; background:#8A9A8A;"></div></div>
+        <span style="width:130px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; text-align:right;">$121K <span style="color:#D4890A; font-size:12px;">▲4.1%</span></span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:104px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Manager</span>
+        <div class="seg-track"><div style="width:73%; height:100%; background:#1D6E3F;"></div></div>
+        <span style="width:130px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums; text-align:right;">$158K <span style="color:#D4890A; font-size:12px;">▲17.0%</span></span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:104px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Director+</span>
+        <div class="seg-track"><div style="width:100%; height:100%; background:#8A9A8A;"></div></div>
+        <span style="width:130px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; text-align:right;">$218K <span style="color:#D4890A; font-size:12px;">▲10.3%</span></span>
+      </div>
+    </div>
+    <p style="font-family:Inter,sans-serif; font-size:13px; font-weight:400; line-height:1.5; color:#7A8A7A; margin:20px 0 0; border-top:1px solid #C8D5C8; padding-top:14px;">Manager moved most (+17.0%), with leads and principals folding into the band and pulling the top up. Director+ is a first real read (n=40) after a thin 2024–25 sample.</p>
+  </div>
+
+  <!-- Chart 2: Skill premium (diverging) -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:40px 56px 8px;">
+    <h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:32px; line-height:1.1; color:#0D1B2A; margin:0 0 6px;">Outcomes pay. Activities discount.</h2>
+    <p style="font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#7A8A7A; margin:0 0 28px;">Median pay delta for roles naming a skill vs roles that don't · specific outcomes above the line, functional categories below · n = 193</p>
+    <div style="display:flex; flex-direction:column; gap:11px;">
+      <!-- premium rows (specific outcome language) -->
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="width:180px; flex:none; font-family:Inter,sans-serif; font-size:13.5px; font-weight:500; color:#222; text-align:right;">Win Rate</span>
+        <div class="div-track"><div class="div-center"></div><div style="margin-left:50%; width:50%; height:100%; background:#1D6E3F;"></div></div>
+        <span style="width:70px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums;">+$39K</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="width:180px; flex:none; font-family:Inter,sans-serif; font-size:13.5px; font-weight:500; color:#222; text-align:right;">Ramp Time</span>
+        <div class="div-track"><div class="div-center"></div><div style="margin-left:50%; width:45%; height:100%; background:#1D6E3F;"></div></div>
+        <span style="width:70px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums;">+$36K</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="width:180px; flex:none; font-family:Inter,sans-serif; font-size:13.5px; font-weight:500; color:#222; text-align:right;">Agentic AI</span>
+        <div class="div-track"><div class="div-center"></div><div style="margin-left:50%; width:28.8%; height:100%; background:#1D6E3F;"></div></div>
+        <span style="width:70px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums;">+$23K</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="width:180px; flex:none; font-family:Inter,sans-serif; font-size:13.5px; font-weight:500; color:#222; text-align:right;">AI (any)</span>
+        <div class="div-track"><div class="div-center"></div><div style="margin-left:50%; width:15%; height:100%; background:#1D6E3F;"></div></div>
+        <span style="width:70px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums;">+$12K</span>
+      </div>
+      <!-- discount rows (functional categories) -->
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="width:180px; flex:none; font-family:Inter,sans-serif; font-size:13.5px; font-weight:500; color:#222; text-align:right;">Sales Tooling / RevOps</span>
+        <div class="div-track"><div class="div-center"></div><div style="margin-left:43.75%; width:6.25%; height:100%; background:#B85450;"></div></div>
+        <span style="width:70px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#B85450; font-variant-numeric:tabular-nums;">–$5K</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="width:180px; flex:none; font-family:Inter,sans-serif; font-size:13.5px; font-weight:500; color:#222; text-align:right;">Instructional Design / LMS</span>
+        <div class="div-track"><div class="div-center"></div><div style="margin-left:42.5%; width:7.5%; height:100%; background:#B85450;"></div></div>
+        <span style="width:70px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#B85450; font-variant-numeric:tabular-nums;">–$6K</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="width:180px; flex:none; font-family:Inter,sans-serif; font-size:13.5px; font-weight:500; color:#222; text-align:right;">Named Methodology</span>
+        <div class="div-track"><div class="div-center"></div><div style="margin-left:44.25%; width:5.75%; height:100%; background:#B85450;"></div></div>
+        <span style="width:70px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#B85450; font-variant-numeric:tabular-nums;">–$4.6K</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="width:180px; flex:none; font-family:Inter,sans-serif; font-size:13.5px; font-weight:500; color:#222; text-align:right;">Content Mgmt Platforms</span>
+        <div class="div-track"><div class="div-center"></div><div style="margin-left:23.75%; width:26.25%; height:100%; background:#B85450;"></div></div>
+        <span style="width:70px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#B85450; font-variant-numeric:tabular-nums;">–$21K</span>
+      </div>
+    </div>
+    <p style="font-family:Inter,sans-serif; font-size:13px; font-weight:400; line-height:1.5; color:#7A8A7A; margin:20px 0 0; border-top:1px solid #C8D5C8; padding-top:14px;">Discounts are grouped: Content Mgmt Platforms bundles Highspot, Seismic, Showpad, Mindtickle, Guru (Seismic and Highspot have announced merger intent). Named Methodology bundles MEDDIC, Challenger, Force Management, Sandler, SPIN. The pattern is clear at the extremes: outcome language (win rate, ramp time) carries the highest premiums; platform and tool language carries the deepest discounts. Senior roles disproportionately name specific outcomes (Win Rate 38% Director+, Ramp Time 44% Director+); execution roles disproportionately name the platforms and frameworks used to do the work. The spread from Win Rate (+$39K) to Content Mgmt Platforms (−$21K) is $60K on the same job function.</p>
+  </div>
+
+  <!-- Chart 3: AI penetration -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:40px 56px 8px;">
+    <h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:32px; line-height:1.1; color:#0D1B2A; margin:0 0 6px;">AI went from 1-in-4 to 2-in-3</h2>
+    <p style="font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#7A8A7A; margin:0 0 28px;">Share of JDs mentioning any AI term · 2026 vs 2024–25</p>
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:104px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">2024–25</span>
+        <div class="seg-track"><div style="width:27.5%; height:100%; background:#8A9A8A;"></div></div>
+        <span style="width:60px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; text-align:right;">27.5%</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:104px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">2026</span>
+        <div class="seg-track"><div style="width:63.6%; height:100%; background:#1D6E3F;"></div></div>
+        <span style="width:60px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums; text-align:right;">63.6%</span>
+      </div>
+    </div>
+    <p style="font-family:Inter,sans-serif; font-size:13px; font-weight:400; line-height:1.5; color:#7A8A7A; margin:20px 0 0; border-top:1px solid #C8D5C8; padding-top:14px;">A 2.3× jump in one year, and the language got specific: "agentic" appears in 11% of JDs, "LLM" in 7%, "GenAI" in 8%. The broader U.S. market runs about 5.7% AI postings. Enablement is absorbing AI at roughly 11× the rate. Worth noting on the sales side: RepVue's Data & AI sub-vertical just cleared 50% quota attainment for the first time since Q3 2022 — the AI-heavy sales orgs are the ones outperforming.</p>
+  </div>
+
+  <!-- Chart 4: Tool stack -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:40px 56px 8px;">
+    <h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:32px; line-height:1.1; color:#0D1B2A; margin:0 0 6px;">Enablement stopped owning the outbound stack</h2>
+    <p style="font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#7A8A7A; margin:0 0 28px;">Tool mention rate in JDs · 2026, with 2024–25 baseline</p>
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:180px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Gong (call intelligence)</span>
+        <div class="seg-track"><div style="width:100%; height:100%; background:#1D6E3F;"></div></div>
+        <span style="width:128px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#1D6E3F; font-variant-numeric:tabular-nums; text-align:right;">12.0% <span style="color:#D4890A; font-weight:400; font-size:12px;">▲ from 9.9</span></span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:180px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Highspot + Seismic</span>
+        <div class="seg-track"><div style="width:94.2%; height:100%; background:#8A9A8A;"></div></div>
+        <span style="width:128px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#222; font-variant-numeric:tabular-nums; text-align:right;">11.3% <span style="color:#7A8A7A; font-weight:400; font-size:12px;">from 16.5</span></span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:180px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Outreach</span>
+        <div class="seg-track"><div style="width:24.2%; height:100%; background:#B85450;"></div></div>
+        <span style="width:128px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#B85450; font-variant-numeric:tabular-nums; text-align:right;">2.9% <span style="color:#B85450; font-weight:400; font-size:12px;">from 6.6</span></span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:180px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">SalesLoft</span>
+        <div class="seg-track"><div style="width:3.3%; height:100%; background:#B85450;"></div></div>
+        <span style="width:128px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:600; color:#B85450; font-variant-numeric:tabular-nums; text-align:right;">0.4% <span style="color:#B85450; font-weight:400; font-size:12px;">from 6.6</span></span>
+      </div>
+    </div>
+    <p style="font-family:Inter,sans-serif; font-size:13px; font-weight:400; line-height:1.5; color:#7A8A7A; margin:20px 0 0; border-top:1px solid #C8D5C8; padding-top:14px;">Call intelligence is the only category still growing inside enablement. Gong went from 11.0% of JDs to 12.0%. Everything else the enablement JD used to name is fading. Highspot and Seismic just announced merger intent, so we're counting them as one platform — combined they dropped from 16.5% to 11.3%, category share shrinking while the vendors consolidate (the tell of a maturing market). The sequencer layer isn't losing to another tool inside enablement, it's leaving enablement entirely: Outreach 6.6% → 2.9%, SalesLoft 6.6% → 0.4%. That work likely sits in demand gen, marketing ops, or the emerging GTM-engineering roles now. The JDs simply stop appearing in enablement datasets, so this remains a hypothesis until we can cross-check other functions. One more thing worth flagging: the PE M&A activity around SalesLoft (acquisition, Drift merger, rebrand) seems to have driven demand away from the tool rather than toward it, a pattern worth watching as more of the category consolidates.</p>
+  </div>
+
+  <!-- The Signal — key insight, gold -->
+  <div style="position:relative; z-index:1; margin:40px 56px 8px; background:#FDF3E1; border-left:3px solid #D4890A; padding:30px 32px 28px;">
+    <div style="font-family:Inter,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#D4890A; margin-bottom:14px;">The Signal</div>
+    <h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:30px; line-height:1.12; color:#0D1B2A; margin:0 0 6px;">The market hires execution. It pays for strategy.</h2>
+    <p style="font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#9A7B3A; margin:0 0 26px;">Share of tracked roles by seniority · n = 284 clean</p>
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:104px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Specialist</span>
+        <div style="flex:1; height:30px; background:#ECE0CC;"><div style="width:27%; height:100%; background:#D4890A;"></div></div>
+        <span style="width:46px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#B5740A; font-variant-numeric:tabular-nums; text-align:right;">27%</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:104px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Manager</span>
+        <div style="flex:1; height:30px; background:#ECE0CC;"><div style="width:55%; height:100%; background:#D4890A;"></div></div>
+        <span style="width:46px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#B5740A; font-variant-numeric:tabular-nums; text-align:right;">55%</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:104px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">Director</span>
+        <div style="flex:1; height:30px; background:#ECE0CC;"><div style="width:15%; height:100%; background:#B5A88C;"></div></div>
+        <span style="width:46px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#7A8A7A; font-variant-numeric:tabular-nums; text-align:right;">15%</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="width:104px; flex:none; font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#222;">VP / Head</span>
+        <div style="flex:1; height:30px; background:#ECE0CC;"><div style="width:2%; height:100%; background:#B5A88C;"></div></div>
+        <span style="width:46px; flex:none; font-family:Inter,sans-serif; font-size:15px; font-weight:600; color:#7A8A7A; font-variant-numeric:tabular-nums; text-align:right;">2%</span>
+      </div>
+    </div>
+    <p style="font-family:Inter,sans-serif; font-size:15px; font-weight:400; line-height:1.6; color:#444; margin:24px 0 0; border-top:1px solid #E4D4B0; padding-top:18px;">82% of open roles sit at the execution tiers (Specialist and Manager). But the pay premium runs the other way: outcome and strategy language lifts comp by up to $39K, while tool and process language discounts it by as much as $21K. Most of the headcount goes to execution, but most of the money goes to strategy. The leadership layer is nearly invisible on public boards, likely filled by promotion rather than posting.</p>
+  </div>
+
+  <!-- The Bottom Line -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:40px 56px 8px; max-width:680px;">
+    <div style="font-family:Inter,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#1D6E3F; margin-bottom:16px;">The Bottom Line</div>
+    <p style="font-family:Inter,sans-serif; font-size:18px; font-weight:400; line-height:1.62; color:#222222; margin:0 0 18px;">The market hires for execution and pays for strategy. 84% of open enablement roles sit at the Specialist and Manager tiers, but the comp premium goes to roles that name revenue outcomes, not the ones that name tools and certifications. The $60K spread between Win Rate and Content Management Platforms is the clearest read on where the function is headed.</p>
+    <p style="font-family:Inter,sans-serif; font-size:18px; font-weight:400; line-height:1.62; color:#222222; margin:0;">If you run an enablement team, the implication is structural: the JDs your company posts tell the market whether you're building around activities or outcomes, and the comp you're able to offer follows accordingly. If you're building an enablement career, the signal is the same. The skills that pay more are the ones closest to revenue. Issue 02 will run on a larger dataset and take a deeper look at the enablement market.</p>
+  </div>
+
+  <!-- Methodology -->
+  <div style="position:relative; z-index:1; background:#EDEDFA; margin:40px 56px 8px; border:1px solid #C8C8E8; padding:26px 28px;">
+    <div style="font-family:Inter,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#6B54C8; margin-bottom:14px;">How we counted</div>
+    <p style="font-family:Inter,sans-serif; font-size:15px; font-weight:400; line-height:1.6; color:#444; margin:0;">Sample: 408 roles with "enablement" in the title, gathered from six public ATS platforms (Greenhouse, Lever, Ashby, SmartRecruiters, Workday, Built In) as of early July 2026. The initial sample is unfiltered by function, so the raw set includes IT enablement, platform enablement, security enablement, and other non-sales roles. After limiting to roles aligned with a sales, revenue, or GTM function, the clean analytical set is 284 roles, of which 193 disclose compensation. Cross-referenced against the BLS Employment Situation, JOLTS, Indeed Hiring Lab, and the RepVue Cloud Sales Index for sales-org context. Year-over-year baseline is a 91-role 2024–25 dataset. Segments are assigned by title normalization (Specialist / Manager / Director+). Compensation reflects the salary listed on the posting; postings vary in whether that figure is base only, base plus variable, or total target, and the specifics often aren't clear until deeper in the process. Skill deltas compare median pay for roles that name a term vs. those that don't. This is a tech-sector index; non-tech employers post on ATS platforms not yet in the dataset. Issue 01 is the baseline; month-over-month tracking begins as the dataset stabilizes.</p>
+  </div>
+
+  <!-- Footnotes -->
+  <div style="position:relative; z-index:1; background:#EFF5EF; padding:32px 56px 8px;">
+    <p style="font-family:Inter,sans-serif; font-size:12.5px; font-weight:400; line-height:1.55; color:#7A8A7A; margin:0; border-top:1px solid #C8D5C8; padding-top:16px;">Sources: U.S. Bureau of Labor Statistics, Current Employment Statistics and Job Openings and Labor Turnover Survey. Indeed Hiring Lab Job Postings Tracker. RepVue Cloud Sales Index (repvue.com), Q1 2026, trailing 12-month crowdsourced data from verified sales professionals; used per RepVue's machine-readable data terms. Enablement Index dataset as of July 2026. Compensation figures reflect salaries listed on postings. n = 408 total; n = 284 clean; n = 193 with salary.</p>
+  </div>
+
+  <!-- Subscribe -->
+  <div style="position:relative; z-index:1; margin-top:24px; background:#0D1B2A; padding:44px 56px;">
+    <div style="font-family:Inter,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#2E9E5B; margin-bottom:16px;">Next · Issue 02 — July 2026</div>
+    <p style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:26px; line-height:1.25; color:#FFFFFF; margin:0 0 28px; max-width:32ch;">The next read on the market, on a bigger dataset, and a deeper look at the enablement market.</p>
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; border-top:1px solid rgba(255,255,255,0.16); padding-top:24px;">
+      <span style="font-family:Inter,sans-serif; font-size:14px; font-weight:500; color:#9AA3AD;">The Enablement Index publishes monthly, after the BLS jobs report.</span>
+      <a href="https://enablementindex.substack.com" style="font-family:Inter,sans-serif; font-size:13px; font-weight:600; letter-spacing:0.04em; color:#0D1B2A; background:#2E9E5B; padding:11px 22px; border-radius:2px; text-decoration:none; display:inline-block;">Subscribe →</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
